@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+scikit-learn
+sklearn.cluster
+sklearn.metrics
+sklearn.preprocessing
+matplotlib.pyplot
