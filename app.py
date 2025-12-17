@@ -92,7 +92,7 @@ elif page == "K-Means Clustering":
         if len(selected_columns) >= 2:
             X = df[selected_columns].to_numpy()
 
-            st.subheader("📌 Data Digunakan (Tanpa Normalisasi)")
+            st.subheader("📌 Data Digunakan ")
             st.dataframe(df[selected_columns])
 
             # ============================
@@ -208,3 +208,4 @@ elif page == "K-Means Clustering":
 
         else:
             st.warning("⚠️ Pilih minimal 2 kolom.")
+
