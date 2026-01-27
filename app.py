@@ -171,15 +171,15 @@ elif page == "K-Means Clustering":
             cluster_summary["TotalSkor"] = cluster_summary.sum(axis=1)
 
             st.markdown("### 📊 Rata-rata Setiap Cluster")
-            st.dataframe(cluster_summary)
+            st.dataframe(cluster_summary.drop(columns=["TotalSkor"]))
 
             # Urutkan dari paling loyal
             ranking = cluster_summary.sort_values("TotalSkor", ascending=False).index.tolist()
 
             label_map = {
-                ranking[0]: "Sangat Loyal",
-                ranking[1]: "Cukup Loyal",
-                ranking[2]: "Tidak Loyal"
+                ranking[1]: "Sangat Loyal",
+                ranking[2]: "Cukup Loyal",
+                ranking[3]: "Tidak Loyal"
             }
 
             # Tambahkan ke data
@@ -208,4 +208,5 @@ elif page == "K-Means Clustering":
 
         else:
             st.warning("⚠️ Pilih minimal 2 kolom.")
+
 
