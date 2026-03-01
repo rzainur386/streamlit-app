@@ -128,7 +128,7 @@ elif page == "K-Means Clustering":
                 dist_df = pd.DataFrame(
                     step["distances"],
                     columns=["Jarak C1", "Jarak C2", "Jarak C3"]
-                )
+                ).round(2)
                 dist_df["Cluster"] = ["C" + str(c + 1) for c in step["clusters"]]
 
                 tampil_df = pd.concat(
@@ -211,6 +211,7 @@ elif page == "K-Means Clustering":
 
         else:
             st.warning("⚠️ Pilih minimal 2 kolom.")
+
 
 
 
