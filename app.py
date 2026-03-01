@@ -92,6 +92,9 @@ elif page == "K-Means Clustering":
         if len(selected_columns) >= 2:
             X = df[selected_columns].to_numpy()
 
+            # Samakan skala seperti Excel (bagi 1000 pada TotalHarga)
+            X[:, 1] = X[:, 1] / 1000
+
             st.subheader("📌 Data Digunakan ")
             st.dataframe(df[selected_columns])
 
@@ -208,6 +211,7 @@ elif page == "K-Means Clustering":
 
         else:
             st.warning("⚠️ Pilih minimal 2 kolom.")
+
 
 
 
