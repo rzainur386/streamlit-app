@@ -79,7 +79,7 @@ elif page == "K-Means Clustering":
     uploaded_file = st.file_uploader("📂 Upload dataset (.csv)", type="csv")
 
     if uploaded_file:
-        df = pd.read_csv(uploaded_file, delimiter=";")
+        df = pd.read_csv(uploaded_file, delimiter=";", decimal=",")
         st.subheader("📊 Data Awal")
         st.dataframe(df)
 
@@ -208,6 +208,7 @@ elif page == "K-Means Clustering":
 
         else:
             st.warning("⚠️ Pilih minimal 2 kolom.")
+
 
 
 
